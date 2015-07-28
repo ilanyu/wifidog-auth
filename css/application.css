@@ -1,0 +1,84 @@
+body {
+	/*background:url(/wifidog/bg.png);*/
+	background-color: black;
+	min-width: 0;
+	color: #444;
+	font-family: "Microsoft YaHei","MicrosoftJhengHei",STHeiti,MingLiu;
+	font-size: 13px;
+	line-height: 1.4em;
+}
+
+#login {
+	width: 50%;
+	padding: 15% 0 0;
+	margin: auto;
+}
+
+form,#form{
+	background-color:white;
+	text-align: center;
+}
+
+#form{
+	padding-bottom: 20px;
+}
+
+#form p{
+	font-size: 18px;
+}
+
+#title{
+	font-size: 40px;
+}
+
+#head{
+	margin-top: -10%;
+}
+
+form label{
+	vertical-align: middle;
+	border: 1px solid gray;
+	text-align: center;
+}
+
+form label[for='username']{
+	background: url(/wifidog/user.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 36px;
+	height: 34px;
+	vertical-align: middle;
+}
+
+form label[for='password']{
+	background: url(/wifidog/password.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 36px;
+	height: 34px;
+	vertical-align: middle;
+}
+
+form input[type='text'],form input[type='password']{
+	width: 50%;
+	height: 30px;
+	font-size: 20px;
+	vertical-align: middle;
+	margin-left: -5px;
+	padding-left: 5px;
+}
+
+form input[type='submit']{
+	margin-bottom: 40px;
+	background-color: rgb(66, 139, 202);
+	border-color: rgb(53, 126, 189);
+	color: rgb(255, 255, 255);
+	width: 50%;
+	height: 35px;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.row{
+	margin-top:15px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html;charset=utf8"/>
+                <link rel='stylesheet' href='{$url}css/application.css' type='text/css'/>
+                <title>成功</title>
+        </head>
+        <body>
+                <div id="login">
+                        <div id='form'>
+                                <img id='head' src='{$url}img/head.png' alt='head'/>
+				<h1 id='title'>登录成功</h1>
+				<p>浏览器即将跳转</p>
+                        </div>
+                </div>
+		<script type="text/javascript">
+			function getCookie(name){ 
+				var strCookie=document.cookie; 
+				var arrCookie=strCookie.split("; "); 
+				for(var i=0;i<arrCookie.length;i++){ 
+					var arr=arrCookie[i].split("="); 
+					if(arr[0]==name)
+						return arr[1]; 
+				} 
+				return ""; 
+			} 
+			var url = getCookie("url");
+			if(url!=""){
+				if(url.substring(0,9)=="http%3A//" || url.substring(0,10)=="https%3A//"){
+					url = url.replace('http%3A//','http://');
+					url = url.replace('https%3A//','https://');
+					var date=new Date(); 
+					date.setTime(date.getTime()-10000);
+					document.cookie = "url=v; expires="+date.toGMTString(); 
+					setTimeout(window.location.href=url,3000);
+				}
+			}
+		</script>
+	</body>
+</html>

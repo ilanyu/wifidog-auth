@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html;charset=utf8"/>
+                <link rel='stylesheet' href='{$url}css/application.css' type='text/css'/>
+                <title>警告</title>
+        </head>
+        <body>
+                <div id="login">
+                        <div id='form'>
+                                <img id='head' src='{$url}img/head.png' alt='head'/>
+                                <h1 id='title'>警告</h1>
+				<h1 id='msg'></h1>
+                        </div>
+                </div>
+
+		<script type='text/javascript'>
+			function getQueryStringByName(name){
+				var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+				if(result == null || result.length < 1){
+					return "";
+				}
+				return result[1];
+			}
+
+			var message = getQueryStringByName("message");
+			message = decodeURI(message);
+			if(message!=""){
+				var msg = document.getElementById("msg");
+				msg.innerHTML = message;
+			}
+		</script>
+	</body>
+</html>
