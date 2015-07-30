@@ -8,6 +8,12 @@ function showhtml($html)
     echo str_replace('{$url}',"http://" . $_SERVER["HTTP_HOST"] . $uri,$content);
 }
 
+function getPassword()
+{
+//    return substr(md5(date("Ymd") . "ly"),0,6);
+    return "88888888";
+}
+
 date_default_timezone_set('PRC');
 if (isset($_REQUEST["token"]))
     $token = htmlspecialchars($_REQUEST["token"]);
@@ -55,7 +61,7 @@ switch ($url)
     case "login":
         if (isset($w_password)&&isset($gw_address)&&isset($gw_port))
         {
-            if ($w_password === substr(md5(date("Ymd") . "ly"),0,6))
+            if ($w_password === getPassword())
             {
                 $token = md5(time() . rand(100000,999999));
                 if (!file_exists("./token/" . $token))
@@ -82,7 +88,7 @@ switch ($url)
         showhtml("portal");
         break;
     case "gettodaypassword":
-        echo substr(md5(date("Ymd") . "ly"),0,6);
+        echo getPassword();
         break;
     default:
         echo "Hello World";
